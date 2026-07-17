@@ -1,12 +1,15 @@
 # DigiHub Solutions Website
 
+## Products
+- Pharmacy POS · Restaurant POS · Hotel PMS · **School Management**
+
 ## New features
+- Pricing: what’s included + how you get started
 - FAQ accordion (Home + Pricing)
 - Extended About + team + timeline + mission
 - Customer count mock (animated stats)
 - Brochure page (print / Save as PDF)
 - Careers page
-- Savings calculator (Pricing)
 - Multi-currency display (INR, USD, EUR, GBP, AED)
 - Sticky free-trial bar (all pages)
 

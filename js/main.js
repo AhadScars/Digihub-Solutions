@@ -114,12 +114,18 @@
     });
   }
 
-  // Prefill business
-  if (form && form.business) {
+  // Prefill business / plan from URL
+  if (form) {
     const params = new URLSearchParams(window.location.search);
     const product = (params.get("product") || "").toLowerCase();
-    if (["pharmacy", "restaurant", "hotel"].includes(product)) {
+    const plan = (params.get("plan") || "").toLowerCase();
+    if (form.business && ["pharmacy", "restaurant", "hotel", "school"].includes(product)) {
       form.business.value = product;
+    }
+    if (form.plan && ["trial", "monthly", "yearly", "multi-pc", "custom"].includes(plan)) {
+      form.plan.value = plan;
+      if (plan === "multi-pc" && form.pcs) form.pcs.value = "3";
+      if (plan === "custom" && form.pcs) form.pcs.value = "4+";
     }
   }
 
@@ -130,6 +136,8 @@
       const name = ((form.name && form.name.value) || "").trim();
       const email = ((form.email && form.email.value) || "").trim();
       const business = ((form.business && form.business.value) || "").trim();
+      const plan = ((form.plan && form.plan.value) || "").trim();
+      const pcs = ((form.pcs && form.pcs.value) || "1").trim();
       const message = ((form.message && form.message.value) || "").trim();
       if (!name || !email || !business) {
         if (formNote) formNote.textContent = "Please fill in name, email, and business type.";
@@ -137,7 +145,15 @@
       }
       if (waNumber) {
         const text = encodeURIComponent(
-          ["Hi DigiHub,", `Name: ${name}`, `Email: ${email}`, `Business: ${business}`, message || ""]
+          [
+            "Hi DigiHub,",
+            `Name: ${name}`,
+            `Email: ${email}`,
+            `Business: ${business}`,
+            plan ? `Plan: ${plan}` : "",
+            pcs ? `PCs: ${pcs}` : "",
+            message || "",
+          ]
             .filter(Boolean)
             .join("\n")
         );
@@ -147,7 +163,17 @@
       }
       const subject = encodeURIComponent(`DigiHub inquiry — ${business} — ${name}`);
       const body = encodeURIComponent(
-        [`Name: ${name}`, `Email: ${email}`, `Business: ${business}`, "", message || ""].join("\n")
+        [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Business: ${business}`,
+          plan ? `Plan: ${plan}` : "",
+          pcs ? `PCs: ${pcs}` : "",
+          "",
+          message || "",
+        ]
+          .filter((line, i, arr) => line !== "" || (i > 0 && arr[i - 1] !== ""))
+          .join("\n")
       );
       window.location.href = `mailto:${cfg.email || "hello@digihub.solutions"}?subject=${subject}&body=${body}`;
     });
@@ -213,8 +239,14 @@
     localStorage.setItem("digihub_currency", code);
     const monthly = cfg.priceMonthlyInr || 399;
     const yearly = cfg.priceYearlyInr || 3999;
+    const multiMo = cfg.priceMultiPcMonthlyInr || 999;
+    const multiYr = cfg.priceMultiPcYearlyInr || 9999;
     const monthlyYear = monthly * 12;
     const save = monthlyYear - yearly;
+    const multiMoYear = multiMo * 12;
+    const multiSave = multiMoYear - multiYr;
+    const multiMin = cfg.multiPcMin || 3;
+    const multiMax = cfg.multiPcMax || 3;
 
     document.querySelectorAll("[data-price='monthly']").forEach((el) => {
       el.textContent = formatMoney(monthly, code);
@@ -228,13 +260,24 @@
     document.querySelectorAll("[data-price='save']").forEach((el) => {
       el.textContent = formatMoney(save, code);
     });
+    document.querySelectorAll("[data-price='multi-monthly']").forEach((el) => {
+      el.textContent = formatMoney(multiMo, code);
+    });
+    document.querySelectorAll("[data-price='multi-yearly']").forEach((el) => {
+      el.textContent = formatMoney(multiYr, code);
+    });
+    document.querySelectorAll("[data-price='multi-save']").forEach((el) => {
+      el.textContent = formatMoney(multiSave, code);
+    });
+    document.querySelectorAll("[data-multi-pc-range]").forEach((el) => {
+      el.textContent = multiMin === multiMax ? String(multiMax) : multiMin + "–" + multiMax;
+    });
     document.querySelectorAll("[data-currency-code]").forEach((el) => {
       el.textContent = code;
     });
     document.querySelectorAll(".currency-select").forEach((sel) => {
       if (sel.value !== code) sel.value = code;
     });
-    updateCalculator();
   }
 
   document.querySelectorAll(".currency-select").forEach((sel) => {
@@ -249,34 +292,6 @@
     sel.value = currency;
     sel.addEventListener("change", () => applyCurrency(sel.value));
   });
-
-  // Pricing calculator
-  function updateCalculator() {
-    const appsEl = document.getElementById("calcApps");
-    const yearsEl = document.getElementById("calcYears");
-    if (!appsEl || !yearsEl) return;
-    const apps = Math.max(1, parseInt(appsEl.value, 10) || 1);
-    const years = Math.max(1, parseInt(yearsEl.value, 10) || 1);
-    const monthly = (cfg.priceMonthlyInr || 399) * apps * years * 12;
-    const yearly = (cfg.priceYearlyInr || 3999) * apps * years;
-    const save = monthly - yearly;
-    const set = (id, inr) => {
-      const el = document.getElementById(id);
-      if (el) el.textContent = formatMoney(inr, currency);
-    };
-    set("calcMonthlyTotal", monthly);
-    set("calcYearlyTotal", yearly);
-    set("calcSaveTotal", save);
-    const pctEl = document.getElementById("calcSavePct");
-    if (pctEl && monthly > 0) {
-      pctEl.textContent = Math.round((save / monthly) * 100) + "%";
-    }
-  }
-
-  const appsEl = document.getElementById("calcApps");
-  const yearsEl = document.getElementById("calcYears");
-  if (appsEl) appsEl.addEventListener("input", updateCalculator);
-  if (yearsEl) yearsEl.addEventListener("input", updateCalculator);
 
   // Count-up stats
   const counters = document.querySelectorAll("[data-count-to]");
