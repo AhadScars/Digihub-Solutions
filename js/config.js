@@ -8,13 +8,13 @@ window.DIGIHUB_CONFIG = {
   trialDays: 7,
 
   // Base prices in INR — 1 PC / 1 store account
-  priceMonthlyInr: 399,
-  priceYearlyInr: 3999,
+  priceMonthlyInr: 299,
+  priceYearlyInr: 2999,
 
   // Multi-PC pack — 3 PCs (multiple counters / stores)
-  // Monthly ₹999 · Yearly ₹9999 (discount vs 12×999=₹11,988)
-  priceMultiPcMonthlyInr: 999,
-  priceMultiPcYearlyInr: 9999,
+  // Monthly ₹699 · Yearly ₹6999
+  priceMultiPcMonthlyInr: 699,
+  priceMultiPcYearlyInr: 6999,
   multiPcMin: 3,
   multiPcMax: 3,
 

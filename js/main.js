@@ -237,10 +237,10 @@
   function applyCurrency(code) {
     currency = code;
     localStorage.setItem("digihub_currency", code);
-    const monthly = cfg.priceMonthlyInr || 399;
-    const yearly = cfg.priceYearlyInr || 3999;
-    const multiMo = cfg.priceMultiPcMonthlyInr || 999;
-    const multiYr = cfg.priceMultiPcYearlyInr || 9999;
+    const monthly = cfg.priceMonthlyInr || 299;
+    const yearly = cfg.priceYearlyInr || 2999;
+    const multiMo = cfg.priceMultiPcMonthlyInr || 699;
+    const multiYr = cfg.priceMultiPcYearlyInr || 6999;
     const monthlyYear = monthly * 12;
     const save = monthlyYear - yearly;
     const multiMoYear = multiMo * 12;
