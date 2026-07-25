@@ -1,8 +1,8 @@
 /* DigiHub site config — edit these values */
 window.DIGIHUB_CONFIG = {
-  whatsapp: "9140980834",
-  whatsappDisplay: "+919140980834",
-  email: "hello@digihub.solutions",
+  whatsapp: "919140980834",
+  whatsappDisplay: "+91 9140980834",
+  email: "abdulindia.scars@gmail.com",
   supportHours: "Mon–Sat, 10:00 AM – 7:00 PM IST",
   supportNote: "Closed Sundays & public holidays",
   trialDays: 7,

@@ -37,7 +37,7 @@
   // WhatsApp
   const waNumber = (cfg.whatsapp || "").replace(/\D/g, "");
   const waDefaultMsg = encodeURIComponent(
-    "Hi DigiHub, I want to start a free trial for your POS software."
+    "Hi DigiHub, I want to discuss software services (Android / iOS / web / website) or a POS trial."
   );
   const waUrl = waNumber
     ? `https://wa.me/${waNumber}?text=${waDefaultMsg}`
@@ -114,20 +114,51 @@
     });
   }
 
-  // Prefill business / plan from URL
+  // Prefill business / plan from URL + service chips
+  const productOptions = [
+    "pharmacy", "restaurant", "hotel", "school",
+    "android", "ios", "web-app", "website", "custom-software", "other",
+  ];
+  const planOptions = [
+    "quote", "consult", "demo", "support",
+    "trial", "monthly", "yearly", "multi-pc", "custom",
+  ];
+
+  function setContactSelection(product, plan) {
+    if (!form) return;
+    if (product && form.business && productOptions.includes(product)) {
+      form.business.value = product;
+    }
+    if (plan && form.plan && planOptions.includes(plan)) {
+      form.plan.value = plan;
+    }
+    document.querySelectorAll(".contact-chip").forEach((chip) => {
+      const p = (chip.getAttribute("data-set-product") || "").toLowerCase();
+      chip.classList.toggle("is-active", Boolean(product) && p === product);
+    });
+  }
+
   if (form) {
     const params = new URLSearchParams(window.location.search);
     const product = (params.get("product") || "").toLowerCase();
     const plan = (params.get("plan") || "").toLowerCase();
-    if (form.business && ["pharmacy", "restaurant", "hotel", "school"].includes(product)) {
-      form.business.value = product;
-    }
-    if (form.plan && ["trial", "monthly", "yearly", "multi-pc", "custom"].includes(plan)) {
-      form.plan.value = plan;
-      if (plan === "multi-pc" && form.pcs) form.pcs.value = "3";
-      if (plan === "custom" && form.pcs) form.pcs.value = "4+";
+    setContactSelection(product, plan || (product ? "quote" : ""));
+    if (product || plan) {
+      const formEl = document.getElementById("contactForm");
+      if (formEl) setTimeout(() => formEl.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
     }
   }
+
+  document.querySelectorAll(".contact-chip[data-set-product]").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const product = (chip.getAttribute("data-set-product") || "").toLowerCase();
+      const plan = (chip.getAttribute("data-set-plan") || "quote").toLowerCase();
+      setContactSelection(product, plan);
+      const formEl = document.getElementById("contactForm");
+      if (formEl) formEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (form && form.business) form.business.focus();
+    });
+  });
 
   // Contact form
   if (form) {
@@ -135,12 +166,13 @@
       e.preventDefault();
       const name = ((form.name && form.name.value) || "").trim();
       const email = ((form.email && form.email.value) || "").trim();
+      const phone = ((form.phone && form.phone.value) || "").trim();
       const business = ((form.business && form.business.value) || "").trim();
       const plan = ((form.plan && form.plan.value) || "").trim();
-      const pcs = ((form.pcs && form.pcs.value) || "1").trim();
+      const budget = ((form.pcs && form.pcs.value) || "n/a").trim();
       const message = ((form.message && form.message.value) || "").trim();
       if (!name || !email || !business) {
-        if (formNote) formNote.textContent = "Please fill in name, email, and business type.";
+        if (formNote) formNote.textContent = "Please fill in name, email, and what you need.";
         return;
       }
       if (waNumber) {
@@ -149,9 +181,10 @@
             "Hi DigiHub,",
             `Name: ${name}`,
             `Email: ${email}`,
-            `Business: ${business}`,
-            plan ? `Plan: ${plan}` : "",
-            pcs ? `PCs: ${pcs}` : "",
+            phone ? `Phone: ${phone}` : "",
+            `Need: ${business}`,
+            plan ? `Help with: ${plan}` : "",
+            budget && budget !== "n/a" ? `Budget: ${budget}` : "",
             message || "",
           ]
             .filter(Boolean)
@@ -166,16 +199,17 @@
         [
           `Name: ${name}`,
           `Email: ${email}`,
-          `Business: ${business}`,
-          plan ? `Plan: ${plan}` : "",
-          pcs ? `PCs: ${pcs}` : "",
+          phone ? `Phone: ${phone}` : "",
+          `Need: ${business}`,
+          plan ? `Help with: ${plan}` : "",
+          budget && budget !== "n/a" ? `Budget: ${budget}` : "",
           "",
           message || "",
         ]
           .filter((line, i, arr) => line !== "" || (i > 0 && arr[i - 1] !== ""))
           .join("\n")
       );
-      window.location.href = `mailto:${cfg.email || "hello@digihub.solutions"}?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:${cfg.email || "abdulindia.scars@gmail.com"}?subject=${subject}&body=${body}`;
     });
   }
 

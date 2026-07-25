@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About DigiHub Solutions, our team, mission, and Windows software for pharmacy, restaurant, hotel, and school." />
+  <meta name="description" content="About DigiHub Solutions — software company building Android, iOS, web apps, websites, custom software, and ready-made business POS." />
   <meta name="theme-color" content="#0f766e" />
   <title>About — DigiHub Solutions</title>
   <link rel="icon" href="assets/logo.png" type="image/png" />
@@ -28,6 +28,17 @@
       <nav class="nav-menu" id="navMenu" aria-label="Primary">
         <a href="index.html" data-nav="index.html">Home</a>
         <div class="nav-dropdown">
+          <a href="services.html" data-nav="services.html">Services</a>
+          <div class="nav-dropdown-menu">
+            <a href="services.html" data-nav="services.html">All services</a>
+            <a href="services.html#android">Android apps</a>
+            <a href="services.html#ios">iOS apps</a>
+            <a href="services.html#web-apps">Web applications</a>
+            <a href="services.html#websites">Websites</a>
+            <a href="services.html#custom">Custom software</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
           <a href="products.html" data-nav="products.html,pharmacy.html,restaurant.html,hotel.html,school.html">Products</a>
           <div class="nav-dropdown-menu">
             <a href="products.html" data-nav="products.html">All products</a>
@@ -38,7 +49,7 @@
           </div>
         </div>
         <a href="features.html" data-nav="features.html">Features</a>
-        <a href="pricing.html" data-nav="pricing.html">Pricing</a>
+        <a href="pricing.html" data-nav="pricing.html" title="Billing / POS products only">POS pricing</a>
         <a href="about.html" data-nav="about.html">About</a>
         <!-- <a href="careers.html" data-nav="careers.html">Careers</a> -->
                 <select class="currency-select" aria-label="Currency" title="Display currency"></select>
@@ -54,8 +65,8 @@
       <div class="container">
         <nav class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>About</span></nav>
         <p class="eyebrow">About DigiHub Solutions</p>
-        <h1>Software for counters that never stop</h1>
-        <p class="lead">We build focused Windows apps for pharmacies, restaurants, hotels, and schools — practical tools staff can learn the same day.</p>
+        <h1>A software company for every platform</h1>
+        <p class="lead">We design and build Android apps, iOS apps, web applications, websites, and custom software — with optional ready-made billing products for stores that need them.</p>
       </div>
     </section>
 
@@ -63,23 +74,23 @@
       <div class="container about-grid">
         <div class="about-story">
           <h2>Our story</h2>
-          <p>DigiHub Solutions started with a simple observation: small and mid-size stores were forced to choose between messy spreadsheets and bloated enterprise suites. Owners needed something in the middle — fast billing, GST-ready invoices, and cloud-backed records — without a full IT department.</p>
-          <p>We chose <strong>separate desktop apps</strong> for each trade. A chemist does not need hotel occupancy charts. A front desk does not need medicine expiry alerts. That focus keeps the interface calm and the training short.</p>
-          <p>Today DigiHub ships four products under one brand: <strong>Pharmacy POS</strong>, <strong>Restaurant POS</strong>, <strong>Hotel PMS</strong>, and <strong>School Management</strong>. All share secure login, license activation, PDF/CSV reports, and MongoDB Atlas cloud data — with full isolation per store account.</p>
-          <p>We sell directly to businesses that want a clear Windows install, a fair trial, and human support during setup. No forced marketplace lock-in. No feature maze.</p>
+          <p>DigiHub Solutions began by helping local businesses replace messy spreadsheets with practical software. That taught us something lasting: good tools should be clear, reliable, and learnable without an IT department.</p>
+          <p>We grew from focused business apps into a <strong>full software studio</strong>. Today we build <strong>Android APK apps, iOS apps, web applications, websites, APIs, and custom desktop tools</strong> for startups, brands, and growing companies in any industry.</p>
+          <p>Alongside custom work, we still offer ready-made <strong>Pharmacy POS, Restaurant POS, Hotel PMS, and School Management</strong> for owners who need billing software quickly. Custom projects and POS products share the same DigiHub standard: clean UX, solid engineering, and human support.</p>
+          <p>We work directly with founders and teams who want clear scope, fair quotes, and launch help — from first idea to production. No forced marketplace lock-in. No feature maze.</p>
         </div>
         <aside class="about-panel glass-panel">
           <h3>At a glance</h3>
           <ul class="icon-list">
             <li><span class="li-ico">✓</span>Company: DigiHub Solutions</li>
-            <li><span class="li-ico">✓</span>Platform: Windows desktop</li>
-            <li><span class="li-ico">✓</span>Database: MongoDB Atlas</li>
-            <li><span class="li-ico">✓</span>Trial: 7 days free</li>
-            <li><span class="li-ico">✓</span>From <span data-price="monthly">₹299</span>/mo or <span data-price="yearly">₹2999</span>/yr</li>
-            <li><span class="li-ico">✓</span>Apps: Pharmacy · Restaurant · Hotel · School</li>
+            <li><span class="li-ico">✓</span>Android · iOS · Web · Websites</li>
+            <li><span class="li-ico">✓</span>Custom software &amp; APIs</li>
+            <li><span class="li-ico">✓</span>Optional ready-made POS line</li>
+            <li><span class="li-ico">✓</span>Custom projects: free quote</li>
+            <li><span class="li-ico">✓</span>POS plans from <span data-price="monthly">₹299</span>/mo</li>
           </ul>
-          <a href="brochure.html" class="btn btn-ghost btn-block" style="margin-bottom:0.5rem">View brochure</a>
-          <a href="contact.html" class="btn btn-primary btn-block">Talk to us</a>
+          <a href="services.html" class="btn btn-ghost btn-block" style="margin-bottom:0.5rem">View services</a>
+          <a href="contact.html?plan=quote" class="btn btn-primary btn-block">Talk to us</a>
         </aside>
       </div>
     </section>
@@ -93,19 +104,19 @@
         <div class="mission-grid">
           <article class="mission-card">
             <h3>Mission</h3>
-            <p>Give every independent pharmacy, restaurant, hotel, and school a reliable system they can run on ordinary Windows PCs — with cloud safety and invoices that look professional.</p>
+            <p>Deliver practical software on every platform — mobile, web, desktop, and cloud — so teams can launch digital products without enterprise complexity.</p>
           </article>
           <article class="mission-card">
             <h3>Vision</h3>
-            <p>Become the default POS choice for local businesses that want focus over feature bloat: one app, one workflow, one fair subscription.</p>
+            <p>Be the software partner businesses trust for apps, websites, and custom systems: clear scope, fair pricing, lasting support.</p>
           </article>
           <article class="mission-card">
             <h3>How we work</h3>
-            <p>Ship dedicated apps, isolate store data, support activation on WhatsApp during business hours, and keep pricing simple: monthly or yearly after a real free trial.</p>
+            <p>Discover, design, build, test, and launch — with WhatsApp and email support during business hours. Fixed POS plans stay available for store billing when needed.</p>
           </article>
           <article class="mission-card">
             <h3>Who we serve</h3>
-            <p>Chemists, cafés, diners, guest houses, hotels, and schools across India and nearby markets — owners who care about speed at the counter and clean books at night.</p>
+            <p>Startups, brands, agencies, retailers, schools, and growing companies that need software — not a one-size spreadsheet or bloated suite.</p>
           </article>
         </div>
       </div>
@@ -120,23 +131,27 @@
         <div class="timeline">
           <div class="timeline-item">
             <strong>Foundation</strong>
-            <p>First Pharmacy POS build with stock, billing, and GST invoices for local medical stores.</p>
+            <p>Started helping local businesses with practical software and clearer digital workflows.</p>
           </div>
           <div class="timeline-item">
-            <strong>Restaurant line</strong>
-            <p>Dedicated Restaurant POS for menu, table / takeaway / delivery orders — same cloud DNA, separate app.</p>
+            <strong>Business products</strong>
+            <p>Shipped focused tools for pharmacy, restaurant, hotel, and school operations.</p>
           </div>
           <div class="timeline-item">
-            <strong>Hotel PMS</strong>
-            <p>Rooms, stays, folio charges, and hotel tax invoices for lodges and guest houses.</p>
+            <strong>Web &amp; cloud</strong>
+            <p>Expanded into web applications, portals, websites, and cloud-backed systems.</p>
           </div>
           <div class="timeline-item">
-            <strong>School Management</strong>
-            <p>Students, classes, teachers, fee collection, and staff salary for schools and academies.</p>
+            <strong>Mobile</strong>
+            <p>Added Android APK and iOS app development for field teams and consumer brands.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>Full software studio</strong>
+            <p>One DigiHub brand for custom software across mobile, web, desktop — plus optional POS products.</p>
           </div>
           <div class="timeline-item">
             <strong>Today</strong>
-            <p>Windows EXE distribution, license keys, multi-currency pricing display, and guided onboarding for every new store.</p>
+            <p>End-to-end projects for any industry, free quotes for custom work, and ready-made billing when stores need speed.</p>
           </div>
         </div>
       </div>
@@ -146,14 +161,14 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Impact (sample)</p>
-          <h2>Customer reach</h2>
-          <p class="section-sub">Mock marketing metrics for demonstration — replace with your real numbers anytime.</p>
+          <h2>Our reach</h2>
+          <p class="section-sub">Illustrative marketing metrics — replace with your real numbers anytime.</p>
         </div>
         <div class="stats-showcase">
-          <div class="stat-big"><div class="num" data-count-to="520" data-count-suffix="+">0</div><div class="label">Business accounts</div><div class="hint">Sample metric</div></div>
+          <div class="stat-big"><div class="num" data-count-to="120" data-count-suffix="+">0</div><div class="label">Software projects</div><div class="hint">Sample metric</div></div>
+          <div class="stat-big"><div class="num" data-count-to="6" data-count-suffix="">0</div><div class="label">Platforms we ship</div><div class="hint">Sample metric</div></div>
           <div class="stat-big"><div class="num" data-count-to="48" data-count-suffix="+">0</div><div class="label">Cities</div><div class="hint">Sample metric</div></div>
-          <div class="stat-big"><div class="num">1.2M+</div><div class="label">Invoices</div><div class="hint">Sample metric</div></div>
-          <div class="stat-big"><div class="num" data-count-to="4.8" data-count-suffix="★">0</div><div class="label">Owner rating</div><div class="hint">Sample metric</div></div>
+          <div class="stat-big"><div class="num" data-count-to="4.8" data-count-suffix="★">0</div><div class="label">Client rating</div><div class="hint">Sample metric</div></div>
         </div>
       </div>
     </section>
@@ -163,37 +178,36 @@
         <div class="section-head">
           <p class="eyebrow">People</p>
           <h2>About the team</h2>
-          <p class="section-sub">Small product team focused on desktop POS, cloud reliability, and store onboarding.</p>
+          <p class="section-sub">A small team focused on mobile, web, custom software, and client success.</p>
         </div>
         <div class="team-grid">
           <article class="team-card">
             <div class="team-avatar a">SQ</div>
             <h3>Shoaib Qazi</h3>
             <div class="team-role">Founder · Product</div>
-            <p>Owns product direction, packaging, and customer success for DigiHub apps.</p>
+            <p>Owns product direction, custom projects, and customer success for DigiHub.</p>
           </article>
           <article class="team-card">
             <div class="team-avatar b">AP</div>
             <h3>A. Patel</h3>
             <div class="team-role">Engineering (mock)</div>
-            <p>Desktop app architecture, billing modules, and release builds.</p>
+            <p>Mobile, web, and desktop architecture — apps, APIs, and release builds.</p>
           </article>
           <article class="team-card">
             <div class="team-avatar c">RK</div>
             <h3>R. Khan</h3>
             <div class="team-role">Support lead (mock)</div>
-            <p>Activation keys, install help, and WhatsApp support during business hours.</p>
+            <p>Onboarding help, project questions, and WhatsApp support during business hours.</p>
           </article>
           <article class="team-card">
             <div class="team-avatar d">MS</div>
             <h3>M. Singh</h3>
             <div class="team-role">Growth (mock)</div>
-            <p>Store onboarding, brochures, and partner conversations.</p>
+            <p>Client conversations, proposals, and partner relationships.</p>
           </article>
         </div>
         <p class="center-actions" style="margin-top:1.5rem">
-          <!-- <a href="careers.html" class="btn btn-ghost">We’re hiring</a> -->
-          <a href="contact.html" class="btn btn-primary">Work with us</a>
+          <a href="contact.html?plan=quote" class="btn btn-primary">Work with us</a>
         </p>
       </div>
     </section>
@@ -201,29 +215,29 @@
     <section class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Products</p>
-          <h2>Four dedicated apps</h2>
+          <p class="eyebrow">What we offer</p>
+          <h2>Services &amp; products</h2>
         </div>
         <div class="provide-grid">
           <article class="provide-card card-lift">
-            <h3>Pharmacy POS</h3>
-            <p>Medicines, batch, expiry, barcode billing, GST tax invoices.</p>
-            <a href="pharmacy.html" class="text-link">Learn more →</a>
+            <h3>Mobile apps</h3>
+            <p>Android APK and iOS apps for business and consumer use.</p>
+            <a href="services.html#android" class="text-link">Learn more →</a>
           </article>
           <article class="provide-card card-lift">
-            <h3>Restaurant POS</h3>
-            <p>Menu, table / takeaway / delivery, instant guest bills.</p>
-            <a href="restaurant.html" class="text-link">Learn more →</a>
+            <h3>Web &amp; websites</h3>
+            <p>Web applications, portals, and modern business websites.</p>
+            <a href="services.html#web-apps" class="text-link">Learn more →</a>
           </article>
           <article class="provide-card card-lift">
-            <h3>Hotel PMS</h3>
-            <p>Rooms, stays, folio charges, occupancy, hotel invoices.</p>
-            <a href="hotel.html" class="text-link">Learn more →</a>
+            <h3>Custom software</h3>
+            <p>Desktop tools, APIs, automation — built for your workflow.</p>
+            <a href="services.html#custom" class="text-link">Learn more →</a>
           </article>
           <article class="provide-card card-lift">
-            <h3>School Management</h3>
-            <p>Students, classes, teachers, fee collection, and staff salary.</p>
-            <a href="school.html" class="text-link">Learn more →</a>
+            <h3>Ready-made POS</h3>
+            <p>Optional Pharmacy, Restaurant, Hotel, and School products.</p>
+            <a href="products.html" class="text-link">Learn more →</a>
           </article>
         </div>
       </div>
@@ -233,12 +247,12 @@
       <div class="container">
         <div class="mini-cta glow">
           <div>
-            <h2>Ready to try DigiHub?</h2>
-            <p>7-day free trial, then <span data-price="monthly">₹299</span>/mo or <span data-price="yearly">₹2999</span>/yr per app.</p>
+            <h2>Ready to work with DigiHub?</h2>
+            <p>Custom apps &amp; websites on free quote · Optional POS from <span data-price="monthly">₹299</span>/mo with a 7-day trial.</p>
           </div>
           <div class="hero-actions" style="margin:0">
-            <a href="contact.html" class="btn btn-primary btn-lg">Start free trial</a>
-            <a href="brochure.html" class="btn btn-ghost light-ghost btn-lg">Brochure</a>
+            <a href="contact.html?plan=quote" class="btn btn-primary btn-lg">Contact us</a>
+            <a href="services.html" class="btn btn-ghost light-ghost btn-lg">View services</a>
           </div>
         </div>
       </div>
@@ -252,12 +266,20 @@
           <img src="assets/logo.png" alt="" width="40" height="40" />
           <div>
             <strong>DigiHub Solutions</strong>
-            <p>Windows software for pharmacy, restaurant, hotel &amp; school. Clean billing. Cloud-ready.</p>
+            <p>Android, iOS, web apps, websites &amp; ready-made business software.</p>
           </div>
         </div>
         <div class="footer-cols">
           <div>
-            <h4>Product</h4>
+            <h4>Services</h4>
+            <a href="services.html">All services</a>
+            <a href="services.html#android">Android apps</a>
+            <a href="services.html#ios">iOS apps</a>
+            <a href="services.html#web-apps">Web applications</a>
+            <a href="services.html#websites">Websites</a>
+          </div>
+          <div>
+            <h4>Products</h4>
             <a href="products.html">All products</a>
             <a href="pharmacy.html">Pharmacy POS</a>
             <a href="restaurant.html">Restaurant POS</a>
@@ -270,25 +292,20 @@
             <!-- <a href="careers.html">Careers</a> -->
             <a href="brochure.html">Brochure</a>
             <a href="features.html">Features</a>
-            <a href="pricing.html">Pricing</a>
+            <a href="pricing.html">POS pricing</a>
             <a href="how-it-works.html">How it works</a>
           </div>
           <div>
             <h4>Get started</h4>
+            <a href="contact.html">Contact / Quote</a>
+            <a href="pricing.html">POS free trial</a>
             <a href="license.html">License</a>
-            <a href="contact.html">Contact</a>
-            <a href="pricing.html">Free 7-day trial</a>
-            <a href="brochure.html">Brochure</a>
-          </div>
-          <div>
-            <h4>Support</h4>
-            <p style="font-size:0.85rem;margin-bottom:0.5rem;color:#8b95a5">Hours: <span data-support-hours>Mon–Sat, 10:00 AM – 7:00 PM IST</span></p>
+            <p style="font-size:0.85rem;margin:0.5rem 0;color:#8b95a5">Hours: <span data-support-hours>Mon–Sat, 10:00 AM – 7:00 PM IST</span></p>
             <a href="#" data-whatsapp-link>WhatsApp chat</a>
-            <a href="contact.html">Contact form</a>
           </div>
         </div>
       </div>
-      <p class="footer-copy">© <span id="year"></span> DigiHub Solutions · ₹299/mo or ₹2999/yr · 7-day free trial</p>
+      <p class="footer-copy">© <span id="year"></span> DigiHub Solutions · Full software solutions · POS from ₹299/mo</p>
     </div>
   </footer>
 
@@ -298,7 +315,7 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.5-1-1-1.4-1.8-1.6-2.1-.1-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.8 3 .7.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.2.1-1.3-.1 0-.3-.1-.6-.2zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.4 15 4 13.5 4 12 4 7.6 7.6 4 12 4s8 3.6 8 8-3.6 8.2-8 8.2z"/></svg>
       <span class="label">WhatsApp</span>
     </a>
-    <a class="fab" href="contact.html"><span class="label">Free trial</span></a>
+    <a class="fab" href="contact.html?plan=quote"><span class="label">Get quote</span></a>
   </div>
 
   <script src="js/config.js"></script>

@@ -28,6 +28,17 @@
       <nav class="nav-menu" id="navMenu" aria-label="Primary">
         <a href="index.html" data-nav="index.html">Home</a>
         <div class="nav-dropdown">
+          <a href="services.html" data-nav="services.html">Services</a>
+          <div class="nav-dropdown-menu">
+            <a href="services.html" data-nav="services.html">All services</a>
+            <a href="services.html#android">Android apps</a>
+            <a href="services.html#ios">iOS apps</a>
+            <a href="services.html#web-apps">Web applications</a>
+            <a href="services.html#websites">Websites</a>
+            <a href="services.html#custom">Custom software</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
           <a href="products.html" data-nav="products.html,pharmacy.html,restaurant.html,hotel.html,school.html">Products</a>
           <div class="nav-dropdown-menu">
             <a href="products.html" data-nav="products.html">All products</a>
@@ -38,7 +49,7 @@
           </div>
         </div>
         <a href="features.html" data-nav="features.html">Features</a>
-        <a href="pricing.html" data-nav="pricing.html">Pricing</a>
+        <a href="pricing.html" data-nav="pricing.html" title="Billing / POS products only">POS pricing</a>
         <a href="about.html" data-nav="about.html">About</a>
         <!-- <a href="careers.html" data-nav="careers.html">Careers</a> -->
                 <select class="currency-select" aria-label="Currency" title="Display currency"></select>
@@ -64,23 +75,23 @@
         <div class="brochure-actions">
           <button type="button" class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button>
           <a href="contact.html" class="btn btn-ghost">Request trial</a>
-          <a href="pricing.html" class="btn btn-ghost">View pricing</a>
+          <a href="pricing.html" class="btn btn-ghost">POS pricing</a>
         </div>
 
         <div class="brochure-sheet" id="brochure">
           <div class="bro-header">
             <div>
               <h1>DigiHub Solutions</h1>
-              <p class="bro-tag">Windows · Pharmacy · Restaurant · Hotel · School</p>
+              <p class="bro-tag">Android · iOS · Web · Websites · POS products</p>
             </div>
             <div style="text-align:right;font-size:0.85rem;color:var(--muted)">
-              <div>7-day free trial</div>
-              <div><span data-price="monthly">₹299</span>/mo · <span data-price="yearly">₹2999</span>/yr</div>
+              <div>Custom projects · POS trial</div>
+              <div>POS from <span data-price="monthly">₹299</span>/mo</div>
             </div>
           </div>
 
           <p style="color:var(--ink-soft);font-size:0.95rem;margin-bottom:1rem">
-            Four separate desktop apps. One brand. Cloud MongoDB, store-level isolation, GST-ready PDF invoices, and license activation built for Indian SMBs.
+            Full software solutions: mobile apps, web applications, websites, and custom software — plus four ready-made desktop POS products with cloud MongoDB, GST invoices, and license activation for Indian SMBs.
           </p>
 
           <div class="bro-grid">
@@ -140,8 +151,8 @@
 
           <p class="bro-foot">
             Support: <span data-support-hours>Mon–Sat, 10:00 AM – 7:00 PM IST</span> ·
-            WhatsApp: <span data-whatsapp-display>+91 98765 43210</span> ·
-            Email: <span data-email-display>hello@digihub.solutions</span>
+            WhatsApp: <span data-whatsapp-display>+91 9140980834</span> ·
+            Email: <span data-email-display>abdulindia.scars@gmail.com</span>
           </p>
         </div>
 </div>
@@ -155,12 +166,20 @@
           <img src="assets/logo.png" alt="" width="40" height="40" />
           <div>
             <strong>DigiHub Solutions</strong>
-            <p>Windows software for pharmacy, restaurant, hotel &amp; school. Clean billing. Cloud-ready.</p>
+            <p>Android, iOS, web apps, websites &amp; ready-made business software.</p>
           </div>
         </div>
         <div class="footer-cols">
           <div>
-            <h4>Product</h4>
+            <h4>Services</h4>
+            <a href="services.html">All services</a>
+            <a href="services.html#android">Android apps</a>
+            <a href="services.html#ios">iOS apps</a>
+            <a href="services.html#web-apps">Web applications</a>
+            <a href="services.html#websites">Websites</a>
+          </div>
+          <div>
+            <h4>Products</h4>
             <a href="products.html">All products</a>
             <a href="pharmacy.html">Pharmacy POS</a>
             <a href="restaurant.html">Restaurant POS</a>
@@ -173,25 +192,20 @@
             <!-- <a href="careers.html">Careers</a> -->
             <a href="brochure.html">Brochure</a>
             <a href="features.html">Features</a>
-            <a href="pricing.html">Pricing</a>
+            <a href="pricing.html">POS pricing</a>
             <a href="how-it-works.html">How it works</a>
           </div>
           <div>
             <h4>Get started</h4>
+            <a href="contact.html">Contact / Quote</a>
+            <a href="pricing.html">POS free trial</a>
             <a href="license.html">License</a>
-            <a href="contact.html">Contact</a>
-            <a href="pricing.html">Free 7-day trial</a>
-            <a href="brochure.html">Brochure</a>
-          </div>
-          <div>
-            <h4>Support</h4>
-            <p style="font-size:0.85rem;margin-bottom:0.5rem;color:#8b95a5">Hours: <span data-support-hours>Mon–Sat, 10:00 AM – 7:00 PM IST</span></p>
+            <p style="font-size:0.85rem;margin:0.5rem 0;color:#8b95a5">Hours: <span data-support-hours>Mon–Sat, 10:00 AM – 7:00 PM IST</span></p>
             <a href="#" data-whatsapp-link>WhatsApp chat</a>
-            <a href="contact.html">Contact form</a>
           </div>
         </div>
       </div>
-      <p class="footer-copy">© <span id="year"></span> DigiHub Solutions · ₹299/mo or ₹2999/yr · 7-day free trial</p>
+      <p class="footer-copy">© <span id="year"></span> DigiHub Solutions · Full software solutions · POS from ₹299/mo</p>
     </div>
   </footer>
 
